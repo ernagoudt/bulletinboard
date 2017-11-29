@@ -1,0 +1,67 @@
+html
+  head
+    title All messages
+    style.
+      body {
+        background-color: ;
+      }
+
+      div {
+        text-align: center;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      div {
+        margin: auto;
+      }
+
+      ul.messages{
+        list-style-type: none;
+        border: 5px solid #990000;
+        border-radius: 5px;
+        width: 700px;
+        margin: 20px auto;
+        text-align: center;
+        padding: 0;
+      }
+
+      li.messages {
+        padding: 20px;
+      }
+
+      li.messages:hover {
+        background: #ccc;
+        cursor: pointer;
+      }
+
+      input[type=text] {
+        margin: 10px;
+        width: 700px;
+        height: 30px;
+        text-align: center;
+      }
+
+      input[type=submit]{
+        margin: 10px;
+        height: 30px;
+      }
+
+  body
+    include nav.pug
+    br
+    br
+    br
+
+    div
+      h1 Bulletin Board
+      input(type="text" name="search" placeholder="Search messages")
+
+    -for (var i = 0; i <allMessages.length; i++)
+      div
+        ul.messages
+          li.messages
+            h3 #{allMessages[i].title}
+            p #{allMessages[i].body}
