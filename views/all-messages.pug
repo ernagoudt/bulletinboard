@@ -39,14 +39,23 @@ html
 
       input[type=text] {
         margin: 10px;
-        width: 700px;
+        width: 600px;
         height: 30px;
         text-align: center;
+        margin-right: 0;
       }
 
       input[type=submit]{
         margin: 10px;
         height: 30px;
+        width: 95px;
+        margin-left: 5px;
+      }
+
+      p.username {
+        text-align: right;
+        margin-bottom: 0;
+        font-size: 0.6em;
       }
 
   body
@@ -57,7 +66,9 @@ html
 
     div
       h1 Bulletin Board
-      input(type="text" name="search" placeholder="Search messages")
+      form(method="post" action ="/search-messages")
+        input(type="text" name="search" placeholder="Search messages")
+        input(type="submit" value="search")
 
     -for (var i = 0; i <allMessages.length; i++)
       div
@@ -65,3 +76,4 @@ html
           li.messages
             h3 #{allMessages[i].title}
             p #{allMessages[i].body}
+            p.username Posted by: #{allMessages[i].username}
